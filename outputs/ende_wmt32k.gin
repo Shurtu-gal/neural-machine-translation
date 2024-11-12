@@ -1,0 +1,121 @@
+import trax.data.tf_inputs
+import trax.models
+import trax.optimizers
+import trax.supervised.trainer_lib
+
+# Parameters for _jit_predict_fn:
+# ==============================================================================
+_jit_predict_fn.jit = True
+
+# Parameters for _jit_update_fn:
+# ==============================================================================
+_jit_update_fn.jit = True
+
+# Parameters for Adafactor:
+# ==============================================================================
+Adafactor.beta1 = 0.0
+Adafactor.clipping_threshold = 1.0
+Adafactor.decay_rate = 0.8
+Adafactor.do_clipping = True
+Adafactor.do_momentum = False
+Adafactor.epsilon1 = 1e-30
+Adafactor.epsilon2 = 0.001
+Adafactor.factored = True
+Adafactor.multiply_by_parameter_scale = True
+Adafactor.weight_decay_rate = 1e-05
+
+# Parameters for backend:
+# ==============================================================================
+backend.name = 'jax'
+
+# Parameters for batcher:
+# ==============================================================================
+batcher.batch_shuffle_size = None
+batcher.batch_size = None
+batcher.batch_size_per_device = 128
+batcher.bucket_length = 32
+batcher.buckets = None
+batcher.buckets_include_inputs_in_length = True
+batcher.data_streams = @tf_inputs.data_streams
+batcher.eval_batch_size = 64
+batcher.id_to_mask = 0
+batcher.max_eval_length = 1024
+batcher.strict_pad_on_len = False
+batcher.variable_shapes = True
+
+# Parameters for data_streams:
+# ==============================================================================
+data_streams.bare_preprocess_fn = None
+data_streams.data_dir = None
+data_streams.dataset_name = 't2t_translate_ende_wmt32k'
+data_streams.eval_holdout_size = 0
+data_streams.input_name = None
+data_streams.preprocess_fn = @trax.data.tf_inputs.wmt_preprocess
+data_streams.shuffle_buffer_size = 1024
+data_streams.target_name = None
+
+# Parameters for LogSoftmax:
+# ==============================================================================
+LogSoftmax.axis = -1
+
+# Parameters for multifactor:
+# ==============================================================================
+multifactor.constant = 1.0
+multifactor.decay_factor = 0.5
+multifactor.factors = 'constant * linear_warmup * rsqrt_decay'
+multifactor.steps_per_cycle = 100000
+multifactor.steps_per_decay = 20000
+multifactor.warmup_steps = 20000
+
+# Parameters for num_devices:
+# ==============================================================================
+num_devices.value = None
+
+# Parameters for random_spans_helper:
+# ==============================================================================
+# None.
+
+# Parameters for Relu:
+# ==============================================================================
+# None.
+
+# Parameters for SentencePieceVocabulary:
+# ==============================================================================
+# None.
+
+# Parameters for train:
+# ==============================================================================
+train.checkpoint_highest = None
+train.checkpoint_lowest = None
+train.checkpoints_at = None
+train.eval_frequency = 1000
+train.eval_steps = 10
+train.metrics = None
+train.model = @trax.models.Transformer
+train.optimizer = @trax.optimizers.Adafactor
+train.random_seed = None
+train.save_graphs = True
+train.steps = 100000
+train.use_loop = False
+
+# Parameters for Transformer:
+# ==============================================================================
+Transformer.d_ff = 2048
+Transformer.d_model = 512
+Transformer.dropout = 0.1
+Transformer.dropout_shared_axes = None
+Transformer.input_vocab_size = 33300
+Transformer.max_len = 2048
+Transformer.n_decoder_layers = 6
+Transformer.n_encoder_layers = 6
+Transformer.n_heads = 8
+Transformer.output_vocab_size = None
+
+# Parameters for Vocabulary:
+# ==============================================================================
+# None.
+
+# Parameters for wmt_preprocess:
+# ==============================================================================
+wmt_preprocess.max_eval_length = 1024
+wmt_preprocess.max_length = 512
