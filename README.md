@@ -9,7 +9,7 @@ This project implements Neural Machine Translation (NMT) for translating English
 ## Demonstration Video 🎥
 
 <!-- Video ./outputs/demo.webm -->
-[![Graphical User Interface](./outputs/gui.png)](./outputs/gui.webm)
+[![Graphical User Interface](./outputs/gui.png)](./outputs/gui.mp4)
 
 ---
 
@@ -82,22 +82,30 @@ Ensure you have the following software installed:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/neural-machine-translation.git
+   git clone https://github.com/Shurtu-gal/neural-machine-translation.git
    cd neural-machine-translation
    ```
 
-2. **Create and activate a virtual environment**:
+2. **LFS (Large File Storage)**:
+   If you have Git LFS installed, pull the large files using:
+   ```bash
+   git lfs pull
+   ```
+
+   OR download from [my GitHub](https://github.com/Shurtu-gal/neural-machine-translation/raw/refs/heads/main/outputs/ende_wmt32k.pkl.gz) and place it in the `outputs` directory.
+
+3. **Create and activate a virtual environment**:
    ```bash
    python -m venv nmt-env
    source nmt-env/bin/activate  # On Windows use `nmt-env\Scripts\activate`
    ```
 
-3. **Install required packages**:
+4. **Install required packages**:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Download the Dataset**:
+5. **Download the Dataset**:
    Place the WMT 14 English-German dataset files into the `data` directory, or run the `preprocess.sh` script to automate the download and preprocessing steps.
 
 ## Usage
