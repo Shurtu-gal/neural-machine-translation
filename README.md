@@ -106,7 +106,7 @@ Ensure you have the following software installed:
    ```
 
 5. **Download the Dataset**:
-   Place the WMT 14 English-German dataset files into the `data` directory, or run the `preprocess.sh` script to automate the download and preprocessing steps.
+   Place the WMT 14 English-German dataset files into the `data` directory. It can be downloaded from https://www.kaggle.com/datasets/mohamedlotfy50/wmt-2014-english-german.
 
 ## Usage
 
