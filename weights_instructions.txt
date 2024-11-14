@@ -1,0 +1,4 @@
+Please paste this link and download the weights from my GitHub repository and place it in the outputs folder.
+This is because the weights file is too large to be uploaded to the assignment submission system.
+
+https://github.com/Shurtu-gal/neural-machine-translation/raw/refs/heads/main/outputs/ende_wmt32k.pkl.gz

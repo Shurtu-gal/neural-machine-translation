@@ -9,7 +9,7 @@ This project implements Neural Machine Translation (NMT) for translating English
 ## Demonstration Video 🎥
 
 <!-- Video ./outputs/demo.webm -->
-[![Graphical User Interface](./outputs/gui.png)](./outputs/gui.mp4)
+[![Graphical User Interface](./outputs/gui.png)](https://github.com/user-attachments/assets/6abd2d55-cf14-4b15-a6c1-b557be926ab1)
 
 ---
 
